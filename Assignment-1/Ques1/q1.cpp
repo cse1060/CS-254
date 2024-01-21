@@ -31,7 +31,7 @@ ll MaxSum(vector<ll> &v)
         else if (it > mx2)
         {
             // it becomes second max
-            mx2 = mx1;
+            mx2 = it;
         }
     }
     // Max sum of 2 nums is the sum of max and 2nd max nums
