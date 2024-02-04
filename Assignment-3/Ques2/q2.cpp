@@ -1,7 +1,8 @@
 // Pratham Gupta - 220001060
 // Question
-// You are given an array of integers, and your task is to find the maximum possible sum of
-// two elements in the array
+// Let x1, x2, . . . , xn be a set of integers.
+// Give an O(n) divide-and-conquer algorithm to find the largest possible sum of
+// a subsequence of consecutive items in the list.
 //-- Change the input file for the testcases
 //---- The Output comes in the output file
 //------ The first line in output.in represents the no. of test cases
