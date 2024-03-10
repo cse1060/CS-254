@@ -1,8 +1,21 @@
-the Number of strongly connected components in testcase 1 is -> 2
+the Number of articulation points in testcase 1 is -> 2
 1 4 
-the Number of strongly connected components in testcase 2 is -> 2
+the Number of bridges in testcase 1 is -> 2
+1 4
+0 1
+
+the Number of articulation points in testcase 2 is -> 2
 2 3 
-the Number of strongly connected components in testcase 3 is -> 1
+the Number of bridges in testcase 2 is -> 2
+3 4
+2 3
+
+the Number of articulation points in testcase 3 is -> 1
 3 
-the Number of strongly connected components in testcase 4 is -> 0
+the Number of bridges in testcase 3 is -> 1
+3 4
+
+the Number of articulation points in testcase 4 is -> 0
+
+the Number of bridges in testcase 4 is -> 0
 

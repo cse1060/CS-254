@@ -16,7 +16,7 @@
 using namespace std;
 #define ll long long
 
-void dfs(int x, int parent, int time, vector<vector<int>> &v, vector<int> &disc, vector<int> &low, vector<bool> &isVis, vector<int> &ap)
+void dfs(int x, int parent, int time, vector<vector<int>> &v, vector<int> &disc, vector<int> &low, vector<bool> &isVis, vector<int> &ap, vector<pair<int, int>> &bridges)
 {
     isVis[x] = 1;
 
@@ -27,12 +27,16 @@ void dfs(int x, int parent, int time, vector<vector<int>> &v, vector<int> &disc,
         if (!isVis[it])
         {
             children++;
-            dfs(it, x, time, v, disc, low, isVis, ap);
+            dfs(it, x, time, v, disc, low, isVis, ap, bridges);
 
             low[x] = min(low[x], low[it]);
             if (parent != -1 && disc[x] <= low[it])
             {
                 ap[x] = 1;
+            }
+            if (disc[x] < low[it])
+            {
+                bridges.push_back({x, it});
             }
         }
         else if (it != parent)
@@ -46,7 +50,7 @@ void dfs(int x, int parent, int time, vector<vector<int>> &v, vector<int> &disc,
     }
 }
 
-vector<int> articulationPoints(int n, vector<vector<int>> &v)
+vector<int> articulationPoints(int n, vector<vector<int>> &v, vector<pair<int, int>> &bridges)
 {
     vector<bool> isVis(n, false);
     vector<int> disc(n);
@@ -57,7 +61,7 @@ vector<int> articulationPoints(int n, vector<vector<int>> &v)
     {
         if (!isVis[i])
         {
-            dfs(i, -1, time, v, disc, low, isVis, ap);
+            dfs(i, -1, time, v, disc, low, isVis, ap, bridges);
         }
     }
     vector<int> ans;
@@ -92,11 +96,18 @@ int main()
             graph[a].push_back(b);
             graph[b].push_back(a);
         }
-        vector<int> articulation_points = articulationPoints(n, graph);
-        cout << "the Number of strongly connected components in testcase " << tt << " is -> " << articulation_points.size() << endl;
+        vector<pair<int, int>> bridges;
+        vector<int> articulation_points = articulationPoints(n, graph, bridges);
+        cout << "the Number of articulation points in testcase " << tt << " is -> " << articulation_points.size() << endl;
         for (auto it : articulation_points)
         {
             cout << it << " ";
+        }
+        cout << endl;
+        cout << "the Number of bridges in testcase " << tt << " is -> " << bridges.size() << endl;
+        for (auto it : bridges)
+        {
+            cout << it.first << " " << it.second << endl;
         }
         cout << endl;
     }
