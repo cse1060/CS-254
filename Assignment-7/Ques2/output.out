@@ -1,0 +1,16 @@
+the max value possible by greedy approach in testcase 1 is -> 127
+The jobs done greedily are -> 
+c a 
+
+the max value possible by greedy approach in testcase 2 is -> 60
+The jobs done greedily are -> 
+c a 
+
+the max value possible by greedy approach in testcase 3 is -> 142
+The jobs done greedily are -> 
+c a e 
+
+the max value possible by greedy approach in testcase 4 is -> 110
+The jobs done greedily are -> 
+d a c b 
+
